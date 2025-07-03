@@ -1,6 +1,8 @@
 # Full-Stack URL Shortener Service
 
-
+<p align="center">
+  <img src="PASTE_YOUR_LANDING_PAGE_IMAGE_URL_HERE" alt="URL Shortener Landing Page" width="80%">
+</p>
 
 This is a comprehensive, full-stack URL shortener application designed to simulate a production-scale service. It includes a modern frontend, a robust backend with an API, and a complete analytics dashboard. The entire application is containerized with Docker and deployed on Google Cloud Run, showcasing a complete development-to-deployment workflow.
 
@@ -37,6 +39,27 @@ To demonstrate an understanding of scalable systems, this application simulates 
 
 ---
 
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td align="center"><strong>Creative Landing Page</strong></td>
+    <td align="center"><strong>Shortened Link Result</strong></td>
+  </tr>
+  <tr>
+    <td><img src="PASTE_YOUR_LANDING_PAGE_IMAGE_URL_HERE" alt="Landing Page Screenshot" width="100%"></td>
+    <td><img src="PASTE_YOUR_RESULT_IMAGE_URL_HERE" alt="Result Screenshot" width="100%"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><strong>Admin Analytics Dashboard</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="PASTE_YOUR_DASHBOARD_IMAGE_URL_HERE" alt="Dashboard Screenshot" width="100%"></td>
+  </tr>
+</table>
+
+---
+
 ## 🛠️ Tech Stack & Architecture
 
 - **Backend:** Node.js, Express.js
@@ -46,8 +69,6 @@ To demonstrate an understanding of scalable systems, this application simulates 
     - **Containerization:** Docker
     - **Hosting:** Google Cloud Run
     - **Container Registry:** Google Artifact Registry
-
-
 
 ---
 
