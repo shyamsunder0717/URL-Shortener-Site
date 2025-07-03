@@ -53,10 +53,10 @@ To demonstrate an understanding of scalable systems, this application simulates 
     <td><img src="https://github.com/shyamsunder0717/URL-Shortener-Site/blob/main/views/result%20page.png" alt="Result Screenshot" width="100%"></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><strong>Admin Analytics Dashboard</strong></td>
+    <td colspan="3" align="center"><strong>Admin Analytics Dashboard</strong></td>
   </tr>
   <tr>
-    <td colspan="2"><img src="https://github.com/shyamsunder0717/URL-Shortener-Site/blob/main/views/dashboard.png" alt="Dashboard Screenshot" width="100%"></td>
+    <td colspan="3"><img src="https://github.com/shyamsunder0717/URL-Shortener-Site/blob/main/views/dashboard.png" alt="Dashboard Screenshot" width="100%"></td>
   </tr>
 </table>
 
