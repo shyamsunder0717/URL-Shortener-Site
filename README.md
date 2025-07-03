@@ -44,10 +44,12 @@ To demonstrate an understanding of scalable systems, this application simulates 
 <table>
   <tr>
     <td align="center"><strong>Creative Landing Page</strong></td>
+    <td align="center"><strong>Site View</strong></td>
     <td align="center"><strong>Shortened Link Result</strong></td>
   </tr>
   <tr>
     <td><img src="https://github.com/shyamsunder0717/URL-Shortener-Site/blob/main/views/Running%20desktop.png" alt="Running Desktop Screenshot" width="100%"></td>
+    <td><img src="https://github.com/shyamsunder0717/URL-Shortener-Site/blob/main/views/Landing%20Page.png" alt="Landing Page" width="100%"></td>
     <td><img src="https://github.com/shyamsunder0717/URL-Shortener-Site/blob/main/views/result%20page.png" alt="Result Screenshot" width="100%"></td>
   </tr>
   <tr>
