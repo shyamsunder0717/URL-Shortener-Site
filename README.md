@@ -96,8 +96,8 @@ To run this project on your local machine, follow these steps:
     ```
 
 4.  **Open the application:**
-    - Main App: [http://localhost:3000](https://github.com/shyamsunder0717/URL-Shortener-Site/blob/main/views/URL%20Shortener%20Pro%20-%20Production%20Simulation%20(7_4_2025%202%EF%BC%9A48%EF%BC%9A40%20AM).html)
-    - Admin Dashboard: [http://localhost:3000/admin/dashboard](https://github.com/shyamsunder0717/URL-Shortener-Site/blob/main/views/Admin%20Dashboard%20(7_4_2025%202%EF%BC%9A47%EF%BC%9A43%20AM).html)
+    - Main App: [http://localhost:3000](https://3000-firebase-url-shortener-app-1751555836623.cluster-bg6uurscprhn6qxr6xwtrhvkf6.cloudworkstations.dev/)
+    - Admin Dashboard: [http://localhost:3000/admin/dashboard](https://3000-firebase-url-shortener-app-1751555836623.cluster-bg6uurscprhn6qxr6xwtrhvkf6.cloudworkstations.dev/admin/dashboard)
 
 ---
 
