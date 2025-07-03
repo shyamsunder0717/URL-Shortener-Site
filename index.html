@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener Pro - Production Simulation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <!-- ======================================================================= -->
+    <!--                  NEW AND ENHANCED STYLES START HERE                   -->
+    <!-- ======================================================================= -->
+    <style>
+        :root { 
+            --primary-color: #5a67d8; 
+            --primary-hover: #434190; 
+            --background-start: #d3cce3;
+            --background-end: #e9e4f0;
+            --card-background: rgba(255, 255, 255, 0.9);
+            --text-dark: #2d3748; 
+            --text-light: #718096; 
+            --border-color: #e2e8f0; 
+        } 
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; } 
+
+        /* --- NEW: Animated Gradient Background --- */
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            color: var(--text-dark); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--background-start), var(--background-end));
+            background-size: 200% 200%;
+            animation: gradient-animation 15s ease infinite;
+        } 
+        
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container { 
+            width: 100%; 
+            max-width: 550px; 
+            background-color: var(--card-background); 
+            padding: 2rem 2.5rem; 
+            border-radius: 1rem; 
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        } 
+
+        header { text-align: center; margin-bottom: 2rem; } 
+
+        /* --- NEW: Staggered Header Animation --- */
+        header h1 { 
+            font-size: 2.25rem; 
+            font-weight: 700; 
+            opacity: 0;
+            animation: slide-down 0.6s 0.2s ease-out forwards;
+        } 
+        header p { 
+            color: var(--text-light); 
+            margin-top: 0.25rem;
+            opacity: 0;
+            animation: slide-up 0.6s 0.4s ease-out forwards;
+        } 
+        
+        @keyframes slide-down {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group { position: relative; margin-bottom: 1rem; } 
+        .form-group .fa-link { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-light); transition: color 0.3s; } 
+        
+        /* --- ENHANCED: Input Field --- */
+        #original-url-input { width: 100%; padding: 1rem 1rem 1rem 3rem; border-radius: 0.5rem; border: 1px solid var(--border-color); font-size: 1rem; transition: all 0.3s; } 
+        #original-url-input:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 4px rgba(90, 103, 216, 0.2); }
+        #original-url-input:focus + .fa-link { color: var(--primary-color); }
+        
+        /* --- ENHANCED: Button Effects --- */
+        .btn { width: 100%; padding: 1rem; background-color: var(--primary-color); color: white; border: none; border-radius: 0.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease-in-out; } 
+        .btn:hover { background-color: var(--primary-hover); box-shadow: 0 4px 15px rgba(90, 103, 216, 0.4); transform: translateY(-2px); }
+        .btn:active { transform: translateY(0) scale(0.98); }
+        
+        /* --- ENHANCED: Results Card Animation --- */
+        .results-card { margin-top: 2rem; border-radius: 0.75rem; display: none; overflow: hidden; border: 1px solid var(--border-color); opacity: 0; animation: slide-up 0.5s ease-out forwards; }
+        .results-card.show { display: block; animation-name: slide-up; }
+
+        #short-url-link { font-weight: 500; color: var(--primary-color); text-decoration: none; word-break: break-all; } 
+        .url-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; background-color: #fff; } 
+        
+        /* --- NEW: Copy Button Animation --- */
+        .btn-copy { background: none; border: none; color: var(--text-light); font-size: 1.2rem; cursor: pointer; transition: color 0.2s; } 
+        .btn-copy.copied .fa-check { animation: pop-in 0.3s ease-out; }
+        
+        @keyframes pop-in {
+            0% { transform: scale(0.5); opacity: 0; }
+            80% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .analytics-link-row { padding: 0.75rem 1.5rem; background-color: #f8fafc; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.9rem; } 
+        .analytics-link-row a { color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; } 
+        .analytics-link-row a:hover { color: var(--primary-color); }
+        
+        /* --- NEW: Staggered Features Animation --- */
+        .features-showcase { margin-top: 2.5rem; text-align: center; } 
+        .features-showcase h3 { font-weight: 600; color: var(--text-dark); margin-bottom: 1rem; opacity: 0; animation: slide-up 0.6s 0.6s ease-out forwards; } 
+        .feature-item { display: flex; align-items: center; justify-content: center; gap: 0.75rem; background-color: #fdfdff; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 0.5rem; border: 1px solid var(--border-color); opacity: 0; transform: translateY(20px); animation: slide-up 0.5s ease-out forwards; }
+        .feature-item i { color: var(--primary-color); } 
+        .feature-item span { font-size: 0.9rem; color: var(--text-light); font-weight: 500; }
+
+        .feature-item:nth-child(1) { animation-delay: 0.8s; }
+        .feature-item:nth-child(2) { animation-delay: 0.9s; }
+        .feature-item:nth-child(3) { animation-delay: 1.0s; }
+        .feature-item:nth-child(4) { animation-delay: 1.1s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>URL Shortener</h1>
+            <p>A production-scale service simulation.</p>
+        </header>
+        <form id="url-form">
+            <div class="form-group">
+                <input type="url" id="original-url-input" placeholder="Enter a long URL to shorten..." required>
+                <i class="fa-solid fa-link"></i>
+            </div>
+            <button type="submit" class="btn">Shorten!</button>
+        </form>
+        <div class="results-card" id="results-card">
+            <div class="url-row">
+                <a href="#" id="short-url-link" target="_blank"></a>
+                <button id="copy-btn" class="btn-copy" title="Copy to clipboard"><i class="fa-regular fa-copy"></i></button>
+            </div>
+            <div class="analytics-link-row">
+                <a href="#" id="analytics-link" target=""><i class="fa-solid fa-chart-simple"></i> View Link Analytics</a>
+            </div>
+        </div>
+        <div class="features-showcase">
+            <h3>Simulated Production Features</h3>
+            <div class="feature-item"><span>Simulated Redis Caching for Low Latency</span></div>
+            <div class="feature-item"><span>API Rate Limiting to Prevent Abuse</span></div>
+            <div class="feature-item"><span>Base62 Encoding for Unique URL Keys</span></div>
+            <div class="feature-item"><span>RESTful API for Service Integration</span></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlForm = document.getElementById('url-form');
+            const urlInput = document.getElementById('original-url-input');
+            const resultsCard = document.getElementById('results-card');
+            const shortUrlLink = document.getElementById('short-url-link');
+            const copyBtn = document.getElementById('copy-btn');
+            const analyticsLink = document.getElementById('analytics-link');
+
+            function normalizeUrl(url) { if (!url.startsWith('http://') && !url.startsWith('https://')) { return `https://${url}`; } return url; }
+
+            const handleFormSubmit = async (event) => {
+                event.preventDefault();
+                const originalUrl = normalizeUrl(urlInput.value.trim());
+                if (!originalUrl) return;
+
+                try {
+                    const response = await fetch('/api/shorten', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ originalUrl: originalUrl }),
+                    });
+
+                    if (response.status === 429) {
+                        alert('You are making too many requests. Please wait a moment and try again.');
+                        return;
+                    }
+                    if (!response.ok) throw new Error('Failed to create short URL');
+                    
+                    const data = await response.json();
+                    
+                    shortUrlLink.href = data.shortUrl;
+                    shortUrlLink.textContent = data.shortUrl;
+                    analyticsLink.href = `${data.shortUrl}/stats`;
+                    resultsCard.classList.add('show'); // Use class to trigger animation
+                    urlInput.value = '';
+                } catch (error) {
+                    console.error(error);
+                    alert('An error occurred on the server.');
+                }
+            };
+
+            const handleCopy = () => {
+                const url = shortUrlLink.href;
+                if (!url || url === '#') return;
+                navigator.clipboard.writeText(url).then(() => {
+                    copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+                    copyBtn.classList.add('copied'); // Add class to trigger animation
+                    
+                    setTimeout(() => {
+                        copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+                        copyBtn.classList.remove('copied'); // Reset for next time
+                    }, 1500);
+                });
+            };
+
+            urlForm.addEventListener('submit', handleFormSubmit);
+            copyBtn.addEventListener('click', handleCopy);
+        });
+    </script>
+</body>
+</html>
