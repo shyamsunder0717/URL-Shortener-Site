@@ -6,10 +6,10 @@
 
 This is a comprehensive, full-stack URL shortener application designed to simulate a production-scale service. It includes a modern frontend, a robust backend with an API, and a complete analytics dashboard. The entire application is containerized with Docker and deployed on Google Cloud Run, showcasing a complete development-to-deployment workflow.
 
-**Live Demo:** [https://my-url-shortener-a1b2c3d4ef-uc.a.run.app](https://my-url-shortener-a1b2c3d4ef-uc.a.run.app)  
+**Live Demo:** [https://my-url-shortener-a1b2c3d4ef-uc.a.run.app](https://3000-firebase-url-shortener-app-1751555836623.cluster-bg6uurscprhn6qxr6xwtrhvkf6.cloudworkstations.dev/)  
 *(Note: Replace with your actual deployed URL!)*
 
-**Admin Dashboard:** [https://my-url-shortener-a1b2c3d4ef-uc.a.run.app/admin/dashboard](https://my-url-shortener-a1b2c3d4ef-uc.a.run.app/admin/dashboard)  
+**Admin Dashboard:** [https://my-url-shortener-a1b2c3d4ef-uc.a.run.app/admin/dashboard](https://3000-firebase-url-shortener-app-1751555836623.cluster-bg6uurscprhn6qxr6xwtrhvkf6.cloudworkstations.dev/admin/dashboard)  
 *(Note: Replace with your actual deployed URL!)*
 
 ---
